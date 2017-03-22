@@ -1,0 +1,45 @@
+{
+  "name": "react-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack -d --watch",
+    "build": "cross-env NODE_ENV=production webpack -p",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --inline --hot"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0",
+    "redux-saga": "^0.14.3",
+    "redux-shape": "^1.0.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.5",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-import": "^1.1.0",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-plugin-transform-node-env-inline": "^0.0.2",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "cross-env": "^3.2.4",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
+    "postcss-loader": "^1.3.2",
+    "postcss-smart-import": "^0.6.9",
+    "precss": "^1.4.0",
+    "recss": "^0.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.8.5",
+    "webpack-dev-server": "^1.4.7"
+  }
+}
