@@ -19,9 +19,6 @@ The directories structure of this example is:
 |   |       └──Counter
 |   |              ├── index.jsx
 |   |              └── styles.less
-|   ├── containers
-|   |       └──Counter
-|   |              └── index.jsx
 |   ├── store
 |   |       ├──initializers
 |   |       |       ├── initCount.js
