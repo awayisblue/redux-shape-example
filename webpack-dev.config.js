@@ -8,10 +8,10 @@ let config = {
   entry: {
     main:['babel-polyfill',APP_DIR + '/index.jsx'],
   },
-  devtool:'source-map',
+  // devtool: 'source-map',
   output: {
     path: BUILD_DIR,
-    filename: '[name].bundle.js',
+    filename: '[name].dev.bundle.js',
   },
   module : {
     rules:[
@@ -21,8 +21,7 @@ let config = {
          use:[
            {
              loader:'babel-loader',
-           },
-
+           }
          ]
       },
       {
@@ -51,24 +50,12 @@ let config = {
   },
   plugins:[
     new webpack.EnvironmentPlugin(['NODE_ENV']),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap:true,
-      parallel: {
-        cache: true,
-        workers: 4 
-      },
-      uglifyOptions:{
-        compress:{
-          warnings: false,
-          drop_console: true
-        }
-      }
-    }),
-
-
   ],
   resolve: {
     extensions: ['.js', '.jsx']
+  },
+  devServer:{
+    inline:true,
   }
 }
 

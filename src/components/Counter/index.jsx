@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import style from './styles.less'
 class Counter extends Component {
     constructor(props){
         super(props)
@@ -13,9 +14,9 @@ class Counter extends Component {
     }
 
     render() {
-        const { value, onIncrement, onDecrement ,onIncrementAsync } = this.props
+        const { value, onIncrement, onDecrement ,onIncrementAsync,jumpHome } = this.props
         return (
-            <p>
+            <div className={style.base}>
                 Clicked: {value} times
                 {' '}
                 <button onClick={onIncrement}>
@@ -33,7 +34,11 @@ class Counter extends Component {
                 <button onClick={onIncrementAsync}>
                     Increment async
                 </button>
-            </p>
+                <hr/>
+                <button onClick={jumpHome}>
+                    Jump Home via saga.
+                </button>
+            </div>
         )
     }
 }
@@ -53,6 +58,9 @@ const mapDispatchToProps  = (dispatch, ownProps)=>{
         },
         onIncrementAsync:()=>{
             dispatch({type:'count.increaseAsync'})
+        },
+        jumpHome:()=>{
+            dispatch({type:'effect.jumpHome'})
         }
     }
 }
